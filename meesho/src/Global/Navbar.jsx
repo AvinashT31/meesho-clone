@@ -1,7 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Css/Navbar.css'
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+
+  const [displayname, setdisplayname] = useState(false);
+  console.log(displayname, "displayname");
+
+  const route = useNavigate();
+
+  useEffect(() => {
+    var cuser = JSON.parse(localStorage.getItem("currentuser"));
+    console.log(cuser, "cuser");
+
+    if (cuser) {
+      setdisplayname(true);
+    }
+  })
+
+  const removeuser = () => {
+      localStorage.removeItem("currentuser");
+      setdisplayname(false);
+      alert("logout successfully");
+  }
+
+  const openpage = () => {
+    route("/register")
+  }
+
   return (
     <div className='navbar-fullpage'>
       <nav className='navbar'>
@@ -34,15 +60,17 @@ const Navbar = () => {
               </div>
             </div>
             <div className='navbar-two-right'>
-              <div className='navbar-two-right-one'>
+              {displayname ? <div className='navbar-two-right-one'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#333333" viewBox="0 0 256 256"><path d="M116,216a12,12,0,0,1-12,12H48a20,20,0,0,1-20-20V48A20,20,0,0,1,48,28h56a12,12,0,0,1,0,24H52V204h52A12,12,0,0,1,116,216Zm108.49-96.49-40-40a12,12,0,0,0-17,17L187,116H104a12,12,0,0,0,0,24h83l-19.52,19.51a12,12,0,0,0,17,17l40-40A12,12,0,0,0,224.49,119.51Z"></path></svg>
+                <p onClick={() => removeuser()} className='navbar-two-text'>Sign-out</p>
+              </div> : <div onClick={() => openpage()} className='navbar-two-right-one'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#333333" viewBox="0 0 256 256"><path d="M234.38,210a123.36,123.36,0,0,0-60.78-53.23,76,76,0,1,0-91.2,0A123.36,123.36,0,0,0,21.62,210a12,12,0,1,0,20.77,12c18.12-31.32,50.12-50,85.61-50s67.49,18.69,85.61,50a12,12,0,0,0,20.77-12ZM76,96a52,52,0,1,1,52,52A52.06,52.06,0,0,1,76,96Z"></path></svg>
                 <p className='navbar-two-text'>Profile</p>
-              </div>
+              </div>}
               <div className='navbar-two-right-one'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#333333" viewBox="0 0 256 256"><path d="M100,216a20,20,0,1,1-20-20A20,20,0,0,1,100,216Zm84-20a20,20,0,1,0,20,20A20,20,0,0,0,184,196ZM235.47,75.53l-27.29,88.7A27.87,27.87,0,0,1,181.41,184H82.93A28.13,28.13,0,0,1,56,163.69L21.81,44H12a12,12,0,0,1,0-24H24.82A20.08,20.08,0,0,1,44.05,34.51L51.34,60H224a12,12,0,0,1,11.47,15.53ZM207.75,84H58.19l20.89,73.1a4,4,0,0,0,3.85,2.9h98.48a4,4,0,0,0,3.83-2.82Z"></path></svg>
                 <p className='navbar-two-text'>Cart</p>
               </div>
-
             </div>
           </div>
 
