@@ -5,7 +5,7 @@
     font-family: sans-serif;
 }
 
-.navbar-fullpage{
+.navbar-fullpage {
     /* border: 1px solid black; */
     width: 100vw;
     height: 100%;
@@ -13,7 +13,7 @@
 }
 
 .navbar {
-    border: 1px solid rgb(206,206,222);
+    border: 1px solid rgb(206, 206, 222);
     width: 100vw;
     height: 10vh;
     display: flex;
@@ -35,7 +35,7 @@
     height: 100%;
 }
 
-.navbar-one-logo{
+.navbar-one-logo {
     width: 100%;
     height: 100%;
 }
@@ -103,13 +103,13 @@
     margin-left: 15%;
 }
 
-.navbar-two-text{
+.navbar-two-text {
     margin-left: 3%;
-    color: rgb(51,51,51);
+    color: rgb(51, 51, 51);
 }
 
-.navbar-two-line{
-    border: 1px solid rgb(206,206,222);
+.navbar-two-line {
+    border: 1px solid rgb(206, 206, 222);
     width: 1%;
     height: 80%;
     display: flex;
@@ -132,7 +132,7 @@
     justify-content: center;
 }
 
-.navbar-two-right-one{
+.navbar-two-right-one {
     /* border: 1px solid black; */
     width: 40%;
     height: 100%;
@@ -140,4 +140,63 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.navbar-bottom {
+    border: 1px solid rgb(139, 139, 163);
+    width: 100vw;
+    height: 8vh;
+}
+
+.navbar-bottom ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin-top: 2.5vh;
+}
+
+.navbar-bottom ul li a {
+    text-decoration: none;
+    color: rgb(138, 53, 73);
+}
+
+.hiddendiv {
+    border: 1px solid rgb(139, 139, 163);;
+    width: 96%;
+    margin: auto;
+    height: 50vh;
+    display: flex;
+    border-top: none;
+
+}
+
+.hiddendivone {
+    /* border: 1px solid black; */
+    width: 15%;
+    height: 100%;
+}
+
+.hiddendivone p {
+    margin-top: 8%;
+    margin-left: 10%;
+    font-weight: 550;
+    color: rgb(138, 53, 73);
+}
+
+.hiddendivone ul{
+    list-style: none;
+    margin-left: 10%;
+    line-height: 2;
+    margin-top: 10%;
+}
+
+.hiddendivone ul li a{
+    text-decoration: none;
+    color:  rgb(107, 107, 112);
+    font-weight: 400;
+}
+
+.hiddendivcolor{
+    background-color: rgb(230, 240, 240);
 }

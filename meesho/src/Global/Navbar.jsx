@@ -19,14 +19,27 @@ const Navbar = () => {
   })
 
   const removeuser = () => {
-      localStorage.removeItem("currentuser");
-      setdisplayname(false);
-      alert("logout successfully");
+    localStorage.removeItem("currentuser");
+    setdisplayname(false);
+    alert("logout successfully");
   }
 
   const openpage = () => {
     route("/register")
   }
+
+  const [opennewpage, setopennewpage] = useState("false");
+  console.log(opennewpage, "opennewpage");
+
+  const opennewdiv = (item) => {
+    setopennewpage(item);
+  }
+
+  const handleItemClick = () => {
+    setopennewpage('');
+  }
+
+
 
   return (
     <div className='navbar-fullpage'>
@@ -73,11 +86,376 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-
-
         </div>
-
       </nav>
+
+      <nav className='navbar-bottom'>
+        <ul>
+          <li onMouseOver={() => opennewdiv('one')} onMouseLeave={() => handleItemClick('one')}><a href="#">Women Ethnic</a></li>
+          <li onMouseOver={() => opennewdiv('two')} onMouseLeave={() => handleItemClick('two')}><a href="#">Women Western</a></li>
+          <li onMouseOver={() => opennewdiv('three')} onMouseLeave={() => handleItemClick('three')}><a href="#">Mens</a></li>
+          <li onMouseOver={() => opennewdiv('four')} onMouseLeave={() => handleItemClick('four')}><a href="#">Kids</a></li>
+          <li onMouseOver={() => opennewdiv('five')} onMouseLeave={() => handleItemClick('five')}><a href="#">Home & Kitchen</a></li>
+          <li onMouseOver={() => opennewdiv('six')} onMouseLeave={() => handleItemClick('six')}><a href="#">Beauty & Health</a></li>
+          <li onMouseOver={() => opennewdiv('seven')} onMouseLeave={() => handleItemClick('seven')}><a href="#">Jewellery & Accessories</a></li>
+          <li onMouseOver={() => opennewdiv('eight')} onMouseLeave={() => handleItemClick('eight')}><a href="#">Bags & Footwear</a></li>
+          <li onMouseOver={() => opennewdiv('nine')} onMouseLeave={() => handleItemClick('nine')}><a href="#">Electronics</a></li>
+        </ul>
+      </nav>
+
+      {opennewpage === 'one' &&
+        <div className='hiddendiv'>
+          <div className='hiddendivone'>
+            <p>All women ethnic</p>
+            <ul>
+              <li><a href="">View all</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Sarees</p>
+            <ul>
+              <li><a href="#">All Sarees</a></li>
+              <li><a href="#">Silk Sarees</a></li>
+              <li><a href="#">Cotton Silk Sarees</a></li>
+              <li><a href="#">Cotton Sarees</a></li>
+              <li><a href="#">Georgette Sarees</a></li>
+              <li><a href="#">Chiffon Sarees</a></li>
+              <li><a href="#">Embroidered Sarees</a></li>
+              <li><a href="#">Satin Sarees</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Kurtis</p>
+            <ul>
+              <li><a href="#">All Kurtis</a></li>
+              <li><a href="#">Anarkali Kurtis</a></li>
+              <li><a href="#">Rayon Kurtis</a></li>
+              <li><a href="#">Cotton Kurtis</a></li>
+              <li><a href="#">Embroidered Kurtis</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Kurta Sets</p>
+            <ul>
+              <li><a href="#">All Kurta Sets</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Suits & Dress Material</p>
+            <ul>
+              <li><a href="#">All Suits & Dress Material</a></li>
+              <li><a href="#">Cotton Suits</a></li>
+              <li><a href="#">Embroidered Suits</a></li>
+              <li><a href="#">Chanderi Suits</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Other Ethnic</p>
+            <ul>
+              <li><a href="#">Blouses</a></li>
+              <li><a href="#">Dupattas</a></li>
+              <li><a href="#">Lehanga</a></li>
+              <li><a href="#">Gown</a></li>
+              <li><a href="#">Ethnic Bottomwear</a></li>
+            </ul>
+          </div>
+        </div>}
+
+      {opennewpage === 'two' &&
+        <div className='hiddendiv'>
+          <div className='hiddendivone'>
+            <p>Topwear</p>
+            <ul>
+              <li><a href="">Tops</a></li>
+              <li><a href="">Dresses</a></li>
+              <li><a href="">Sweaters</a></li>
+              <li><a href="">Jumpsuits</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Bottomwear</p>
+            <ul>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Jeggings</a></li>
+              <li><a href="#">Palazzos</a></li>
+              <li><a href="#">Shorts</a></li>
+              <li><a href="#">Skirts</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Innerwear</p>
+            <ul>
+              <li><a href="#">Bra</a></li>
+              <li><a href="#">Briefs</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Sleepwear</p>
+            <ul>
+              <li><a href="#">Nightsuits</a></li>
+              <li><a href="#">Babydolls</a></li>
+            </ul>
+          </div>
+        </div>}
+
+      {opennewpage === 'three' &&
+        <div className='hiddendiv'>
+          <div className='hiddendivone'>
+            <p>Topwear</p>
+            <ul>
+              <li><a href="">Tops</a></li>
+              <li><a href="">Dresses</a></li>
+              <li><a href="">Sweaters</a></li>
+              <li><a href="">Jumpsuits</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Bottomwear</p>
+            <ul>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Jeggings</a></li>
+              <li><a href="#">Palazzos</a></li>
+              <li><a href="#">Shorts</a></li>
+              <li><a href="#">Skirts</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Innerwear</p>
+            <ul>
+              <li><a href="#">Bra</a></li>
+              <li><a href="#">Briefs</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Sleepwear</p>
+            <ul>
+              <li><a href="#">Nightsuits</a></li>
+              <li><a href="#">Babydolls</a></li>
+            </ul>
+          </div>
+        </div>}
+
+      {opennewpage === 'four' &&
+        <div className='hiddendiv'>
+          <div className='hiddendivone'>
+            <p>Topwear</p>
+            <ul>
+              <li><a href="">Tops</a></li>
+              <li><a href="">Dresses</a></li>
+              <li><a href="">Sweaters</a></li>
+              <li><a href="">Jumpsuits</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Bottomwear</p>
+            <ul>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Jeggings</a></li>
+              <li><a href="#">Palazzos</a></li>
+              <li><a href="#">Shorts</a></li>
+              <li><a href="#">Skirts</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Innerwear</p>
+            <ul>
+              <li><a href="#">Bra</a></li>
+              <li><a href="#">Briefs</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Sleepwear</p>
+            <ul>
+              <li><a href="#">Nightsuits</a></li>
+              <li><a href="#">Babydolls</a></li>
+            </ul>
+          </div>
+        </div>}
+
+      {opennewpage === 'five' &&
+        <div className='hiddendiv'>
+          <div className='hiddendivone'>
+            <p>Topwear</p>
+            <ul>
+              <li><a href="">Tops</a></li>
+              <li><a href="">Dresses</a></li>
+              <li><a href="">Sweaters</a></li>
+              <li><a href="">Jumpsuits</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Bottomwear</p>
+            <ul>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Jeggings</a></li>
+              <li><a href="#">Palazzos</a></li>
+              <li><a href="#">Shorts</a></li>
+              <li><a href="#">Skirts</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Innerwear</p>
+            <ul>
+              <li><a href="#">Bra</a></li>
+              <li><a href="#">Briefs</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Sleepwear</p>
+            <ul>
+              <li><a href="#">Nightsuits</a></li>
+              <li><a href="#">Babydolls</a></li>
+            </ul>
+          </div>
+        </div>}
+
+      {opennewpage === 'six' &&
+        <div className='hiddendiv'>
+          <div className='hiddendivone'>
+            <p>Topwear</p>
+            <ul>
+              <li><a href="">Tops</a></li>
+              <li><a href="">Dresses</a></li>
+              <li><a href="">Sweaters</a></li>
+              <li><a href="">Jumpsuits</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Bottomwear</p>
+            <ul>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Jeggings</a></li>
+              <li><a href="#">Palazzos</a></li>
+              <li><a href="#">Shorts</a></li>
+              <li><a href="#">Skirts</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Innerwear</p>
+            <ul>
+              <li><a href="#">Bra</a></li>
+              <li><a href="#">Briefs</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Sleepwear</p>
+            <ul>
+              <li><a href="#">Nightsuits</a></li>
+              <li><a href="#">Babydolls</a></li>
+            </ul>
+          </div>
+        </div>}
+
+      {opennewpage === 'seven' &&
+        <div className='hiddendiv'>
+          <div className='hiddendivone'>
+            <p>Topwear</p>
+            <ul>
+              <li><a href="">Tops</a></li>
+              <li><a href="">Dresses</a></li>
+              <li><a href="">Sweaters</a></li>
+              <li><a href="">Jumpsuits</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Bottomwear</p>
+            <ul>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Jeggings</a></li>
+              <li><a href="#">Palazzos</a></li>
+              <li><a href="#">Shorts</a></li>
+              <li><a href="#">Skirts</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Innerwear</p>
+            <ul>
+              <li><a href="#">Bra</a></li>
+              <li><a href="#">Briefs</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Sleepwear</p>
+            <ul>
+              <li><a href="#">Nightsuits</a></li>
+              <li><a href="#">Babydolls</a></li>
+            </ul>
+          </div>
+        </div>}
+
+      {opennewpage === 'eight' &&
+        <div className='hiddendiv'>
+          <div className='hiddendivone'>
+            <p>Topwear</p>
+            <ul>
+              <li><a href="">Tops</a></li>
+              <li><a href="">Dresses</a></li>
+              <li><a href="">Sweaters</a></li>
+              <li><a href="">Jumpsuits</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Bottomwear</p>
+            <ul>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Jeggings</a></li>
+              <li><a href="#">Palazzos</a></li>
+              <li><a href="#">Shorts</a></li>
+              <li><a href="#">Skirts</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Innerwear</p>
+            <ul>
+              <li><a href="#">Bra</a></li>
+              <li><a href="#">Briefs</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Sleepwear</p>
+            <ul>
+              <li><a href="#">Nightsuits</a></li>
+              <li><a href="#">Babydolls</a></li>
+            </ul>
+          </div>
+        </div>}
+
+        {opennewpage === 'nine' &&
+        <div className='hiddendiv'>
+          <div className='hiddendivone'>
+            <p>Topwear</p>
+            <ul>
+              <li><a href="">Tops</a></li>
+              <li><a href="">Dresses</a></li>
+              <li><a href="">Sweaters</a></li>
+              <li><a href="">Jumpsuits</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Bottomwear</p>
+            <ul>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Jeggings</a></li>
+              <li><a href="#">Palazzos</a></li>
+              <li><a href="#">Shorts</a></li>
+              <li><a href="#">Skirts</a></li>
+            </ul>
+          </div>
+          <div className='hiddendivone'>
+            <p>Innerwear</p>
+            <ul>
+              <li><a href="#">Bra</a></li>
+              <li><a href="#">Briefs</a></li>
+            </ul>
+          </div>
+          <div style={{ backgroundColor: "rgb(230, 240, 240)" }} className='hiddendivone'>
+            <p>Sleepwear</p>
+            <ul>
+              <li><a href="#">Nightsuits</a></li>
+              <li><a href="#">Babydolls</a></li>
+            </ul>
+          </div>
+        </div>}
     </div>
   )
 }

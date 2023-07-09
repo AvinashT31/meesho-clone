@@ -1,10 +1,14 @@
 import React from 'react'
+import '../Css/Homepage.css'
 
 const Homepage = () => {
   return (
-    <div>
-      
-    </div>
+    <main className='homepage'>
+      <div className='home'>
+
+      </div>
+
+    </main>
   )
 }
 
