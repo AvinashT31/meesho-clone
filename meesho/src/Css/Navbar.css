@@ -15,7 +15,7 @@
 .navbar {
     border: 1px solid rgb(206, 206, 222);
     width: 100vw;
-    height: 10vh;
+    height: 12vh;
     display: flex;
     justify-content: space-evenly;
     box-sizing: border-box;
@@ -33,6 +33,9 @@
     /* border: 1px solid black; */
     width: 25%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-one-logo {
@@ -47,6 +50,7 @@
     margin-left: 5%;
     display: flex;
     border-radius: 5px;
+    margin-top: 1%;
 }
 
 .navbar-one-icon {
@@ -79,7 +83,7 @@
     /* border: 1px solid black; */
     width: 48%;
     height: 8vh;
-    margin-top: 1vh;
+    margin-top: 2vh;
 }
 
 .navbar-two-item {
@@ -152,9 +156,10 @@
 }
 
 .navbar-bottom {
-    border: 1px solid rgb(139, 139, 163);
+    border-bottom: 1px solid rgb(206, 206, 211);
     width: 100vw;
     height: 8vh;
+    padding-top: 1px;
 }
 
 .navbar-bottom ul {
@@ -171,7 +176,7 @@
 }
 
 .hiddendiv {
-    border: 1px solid rgb(139, 139, 163);;
+    border: 1px solid rgb(206, 206, 211);
     width: 96%;
     margin: auto;
     height: 50vh;
