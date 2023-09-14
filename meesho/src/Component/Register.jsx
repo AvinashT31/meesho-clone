@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import '../Css/Register.css'
 import { json, useNavigate } from 'react-router-dom';
 
 const Register = () => {
